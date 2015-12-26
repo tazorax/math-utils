@@ -1,0 +1,22 @@
+language: php
+php:
+  - '7.0'
+  - '5.6'
+  - '5.5'
+  - '5.4'
+  - 'hhvm'
+env:
+  global:
+  - secure: "vUTUX+7J86Cz69f/WIWGX3ALThr6oNsTqbiQfLoMT28nakK74aR7lcmuFP91UkSglzBktLHbHN1tETXa3OX5pb+bTRbz8lgJ1bBK69JNlD+GZ4HW2mDrfKnAWrnSOhh1PMbcxs3fKwypZtiMNYWihhsRcKY37NmGcJ0MWpTzqNwvMGHnALszjyFzQqkGQfVPamfeQ2hdxkz0IJYq6bE+tQY3vDrZLicb4KclQhl6sEqFU/5hs9yfMXK0tdX5OgbMyGT7X9k7j2QKYGEqc7kg23NC38yOUgRreu/D7pL716zyvSt/pqVcPi1di5qptsUCVzZdVrTCqOPA0w5QFctXYZN4N+9znQrKfC3nTXMu2GdNvd6vJCz/6E+MWJlmetwVYeuKjpHYjtQY3M+83RY2E5zqyaKx+0wrnzl2WjF5iAvaoejfmZJovsqXBwB0548V1/P8k10W4sMB6nRBnyjqDhbim06n6XeoIM+Kov/QLWwCqMd8maZxjXIwZYiPUHRVxif/FZgkJcmXUNAGn203UAKuZAwenebpqS/uez7f0HuzCYlBeYUBiL0dtggPiIAzDAsWbTNhEpWoSsDvU2QOmh5Rkn9B3CP8J56j37KA1X0FWkjxXSEWU1BtN4pWcCDJkAgo6CDeYdi6v5cibwjQkz+Gf/5FIy6qWUAIDKXDNx8="
+before_install:
+  - sudo bash build-tools/travis_shell_before_install.sh
+install:
+  - curl -s http://getcomposer.org/installer | php
+  - php composer.phar install --dev --no-interaction
+  - mkdir -p build/docs
+  - mkdir -p build/logs
+script:
+  - php vendor/bin/phpunit -c phpunit.xml.dist
+after_success:
+  - sh -c 'if [ "$TRAVIS_PHP_VERSION" != "hhvm" ]; then php vendor/bin/coveralls -v; fi;'
+  - bash build-tools/travis_shell_after_success.sh
