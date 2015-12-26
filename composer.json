@@ -1,0 +1,25 @@
+{
+  "name": "tazorax/math-utils",
+  "description": "Mathematical objects for PHP",
+  "homepage": "http://tazorax.github.io/math-utils/",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "tazorax",
+      "email": "tazorax@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-0": {
+      "Tazorax\\": "src/"
+    }
+  },
+  "require": {
+    "php": ">=5.4.0"
+  },
+  "require-dev": {
+    "satooshi/php-coveralls": "0.7.*",
+    "phpunit/phpunit": "4.* || 5.*",
+    "phpdocumentor/phpdocumentor": "2.*"
+  }
+}
