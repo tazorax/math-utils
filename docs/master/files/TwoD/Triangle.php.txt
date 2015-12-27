@@ -10,19 +10,34 @@ namespace Tazorax\MathUtils\TwoD;
 class Triangle extends Polygon {
 
 	/**
-	 * AB Side
+	 * A point
 	 */
-	const AB_SIDE = 1;
+	const A_POINT = 0;
 
 	/**
-	 * AC Side
+	 * B point
 	 */
-	const AC_SIDE = 2;
+	const B_POINT = 1;
 
 	/**
-	 * BC Side
+	 * C point
 	 */
-	const BC_SIDE = 3;
+	const C_POINT = 2;
+
+	/**
+	 * AB side
+	 */
+	const AB_SIDE = 0;
+
+	/**
+	 * AC side
+	 */
+	const AC_SIDE = 1;
+
+	/**
+	 * BC side
+	 */
+	const BC_SIDE = 2;
 
 	/**
 	 * Triangle constructor.
@@ -33,9 +48,10 @@ class Triangle extends Polygon {
 	 */
 	public function __construct(Point2d $pointA, Point2d $pointB, Point2d $pointC) {
 		parent::__construct();
-		$this->_points[0] = $pointA;
-		$this->_points[1] = $pointB;
-		$this->_points[2] = $pointC;
+
+		$this->setPointA($pointA);
+		$this->setPointB($pointB);
+		$this->setPointC($pointC);
 	}
 
 	/**
@@ -44,16 +60,16 @@ class Triangle extends Polygon {
 	 * @return Point2d
 	 */
 	public function getPointA() {
-		return $this->_points[0];
+		return $this->getPoint(self::A_POINT);
 	}
 
 	/**
 	 * Set A point
 	 *
-	 * @param Point2d $pointA
+	 * @param Point2d $point
 	 */
-	public function setPointA($pointA) {
-		$this->_points[0] = $pointA;
+	public function setPointA($point) {
+		$this->setPoint(self::A_POINT, $point);
 	}
 
 	/**
@@ -62,16 +78,16 @@ class Triangle extends Polygon {
 	 * @return Point2d
 	 */
 	public function getPointB() {
-		return $this->_points[1];
+		return $this->getPoint(self::B_POINT);
 	}
 
 	/**
 	 * Set B point
 	 *
-	 * @param Point2d $pointB
+	 * @param Point2d $point
 	 */
-	public function setPointB($pointB) {
-		$this->_points[1] = $pointB;
+	public function setPointB($point) {
+		$this->setPoint(self::B_POINT, $point);
 	}
 
 	/**
@@ -80,16 +96,16 @@ class Triangle extends Polygon {
 	 * @return Point2d
 	 */
 	public function getPointC() {
-		return $this->_points[2];
+		return $this->getPoint(self::C_POINT);
 	}
 
 	/**
 	 * Set C point
 	 *
-	 * @param Point2d $pointC
+	 * @param Point2d $point
 	 */
-	public function setPointC($pointC) {
-		$this->_points[2] = $pointC;
+	public function setPointC($point) {
+		$this->setPoint(self::C_POINT, $point);
 	}
 
 	/**
@@ -161,9 +177,9 @@ class Triangle extends Polygon {
 	 * @return array
 	 */
 	public function getSideSizes() {
-		$ab = $this->_points[0]->distanceFrom($this->_points[1]);
-		$ac = $this->_points[0]->distanceFrom($this->_points[2]);
-		$bc = $this->_points[1]->distanceFrom($this->_points[2]);
+		$ab = $this->getPointA()->distanceFrom($this->getPointB());
+		$ac = $this->getPointA()->distanceFrom($this->getPointC());
+		$bc = $this->getPointB()->distanceFrom($this->getPointC());
 
 		return [self::AB_SIDE => $ab, self::AC_SIDE => $ac, self::BC_SIDE => $bc];
 	}
