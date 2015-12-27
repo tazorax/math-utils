@@ -13,7 +13,7 @@ class Polygon {
 	const COMPARAISON_PRECISION = 12;
 
 	/**
-	 * @var Point2d[]
+	 * @var Point2d []
 	 */
 	protected $_points;
 
@@ -59,7 +59,7 @@ class Polygon {
 	}
 
 	/**
-	 * Get the number of point in this polygon
+	 * Get the number of points in this polygon
 	 *
 	 * @return int
 	 */
