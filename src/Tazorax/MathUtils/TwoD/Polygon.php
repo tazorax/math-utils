@@ -43,4 +43,12 @@ class Polygon {
 
 		return $this->_points[$index];
 	}
+
+	/**
+	 * @param int $index
+	 * @param Point2d $point
+	 */
+	public function setPoint($index, Point2d $point) {
+		$this->_points[$index] = $point;
+	}
 }

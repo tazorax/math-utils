@@ -11,6 +11,7 @@ Mathematical objects for PHP 5.4, 5.5, 5.6, 7.0 and HHVM
 ## Content
 ### 2D (WIP)
 - Point2d
+- Polygon
 - Triangle
 - Vector2d
 
