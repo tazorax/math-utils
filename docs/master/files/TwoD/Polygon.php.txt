@@ -25,6 +25,8 @@ class Polygon {
 	}
 
 	/**
+	 * Add point
+	 *
 	 * @param Point2d $point
 	 */
 	public function addPoint(Point2d $point) {
@@ -32,6 +34,8 @@ class Polygon {
 	}
 
 	/**
+	 * Get point at index
+	 *
 	 * @param int $index
 	 * @return Point2d
 	 * @throws \Exception
@@ -45,11 +49,22 @@ class Polygon {
 	}
 
 	/**
+	 * Add or set a point for the given index
+	 *
 	 * @param int $index
 	 * @param Point2d $point
 	 */
 	public function setPoint($index, Point2d $point) {
 		$this->_points[$index] = $point;
+	}
+
+	/**
+	 * Get the number of point in this polygon
+	 *
+	 * @return int
+	 */
+	public function pointsCount() {
+		return count($this->_points);
 	}
 }
 
