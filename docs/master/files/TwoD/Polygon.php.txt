@@ -8,9 +8,14 @@ namespace Tazorax\MathUtils\TwoD;
  */
 class Polygon {
 	/**
+	 * Precision of size comparison
+	 */
+	const COMPARAISON_PRECISION = 12;
+
+	/**
 	 * @var Point2d[]
 	 */
-	private $_points;
+	protected $_points;
 
 	/**
 	 * Polygon constructor.
