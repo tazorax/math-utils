@@ -35,6 +35,9 @@ class TriangleTest extends \PHPUnit_Framework_TestCase {
 		$this->assertTrue($pointD->equals($t2->getPointA()));
 		$this->assertTrue($pointE->equals($t2->getPointB()));
 		$this->assertTrue($pointF->equals($t2->getPointC()));
+
+		$this->assertEquals(3, $t1->pointsCount());
+		$this->assertEquals(3, $t2->pointsCount());
 	}
 
 	/**
