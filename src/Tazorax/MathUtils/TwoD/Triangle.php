@@ -7,12 +7,7 @@ namespace Tazorax\MathUtils\TwoD;
  *
  * @package Tazorax\MathUtils\TwoD
  */
-class Triangle {
-
-	/**
-	 * Precision of size comparison
-	 */
-	const COMPARAISON_PRECISION = 12;
+class Triangle extends Polygon {
 
 	/**
 	 * AB Side
@@ -30,27 +25,6 @@ class Triangle {
 	const BC_SIDE = 3;
 
 	/**
-	 * A point
-	 *
-	 * @var Point2d
-	 */
-	private $_pointA;
-
-	/**
-	 * B point
-	 *
-	 * @var Point2d
-	 */
-	private $_pointB;
-
-	/**
-	 * C point
-	 *
-	 * @var Point2d
-	 */
-	private $_pointC;
-
-	/**
 	 * Triangle constructor.
 	 *
 	 * @param Point2d $pointA A point
@@ -58,9 +32,10 @@ class Triangle {
 	 * @param Point2d $pointC C point
 	 */
 	public function __construct(Point2d $pointA, Point2d $pointB, Point2d $pointC) {
-		$this->_pointA = $pointA;
-		$this->_pointB = $pointB;
-		$this->_pointC = $pointC;
+		parent::__construct();
+		$this->_points[0] = $pointA;
+		$this->_points[1] = $pointB;
+		$this->_points[2] = $pointC;
 	}
 
 	/**
@@ -69,7 +44,7 @@ class Triangle {
 	 * @return Point2d
 	 */
 	public function getPointA() {
-		return $this->_pointA;
+		return $this->_points[0];
 	}
 
 	/**
@@ -78,7 +53,7 @@ class Triangle {
 	 * @param Point2d $pointA
 	 */
 	public function setPointA($pointA) {
-		$this->_pointA = $pointA;
+		$this->_points[0] = $pointA;
 	}
 
 	/**
@@ -87,7 +62,7 @@ class Triangle {
 	 * @return Point2d
 	 */
 	public function getPointB() {
-		return $this->_pointB;
+		return $this->_points[1];
 	}
 
 	/**
@@ -96,7 +71,7 @@ class Triangle {
 	 * @param Point2d $pointB
 	 */
 	public function setPointB($pointB) {
-		$this->_pointB = $pointB;
+		$this->_points[1] = $pointB;
 	}
 
 	/**
@@ -105,7 +80,7 @@ class Triangle {
 	 * @return Point2d
 	 */
 	public function getPointC() {
-		return $this->_pointC;
+		return $this->_points[2];
 	}
 
 	/**
@@ -114,7 +89,7 @@ class Triangle {
 	 * @param Point2d $pointC
 	 */
 	public function setPointC($pointC) {
-		$this->_pointC = $pointC;
+		$this->_points[2] = $pointC;
 	}
 
 	/**
@@ -186,9 +161,9 @@ class Triangle {
 	 * @return array
 	 */
 	public function getSideSizes() {
-		$ab = $this->_pointA->distanceFrom($this->_pointB);
-		$ac = $this->_pointA->distanceFrom($this->_pointC);
-		$bc = $this->_pointB->distanceFrom($this->_pointC);
+		$ab = $this->_points[0]->distanceFrom($this->_points[1]);
+		$ac = $this->_points[0]->distanceFrom($this->_points[2]);
+		$bc = $this->_points[1]->distanceFrom($this->_points[2]);
 
 		return [self::AB_SIDE => $ab, self::AC_SIDE => $ac, self::BC_SIDE => $bc];
 	}
@@ -206,5 +181,18 @@ class Triangle {
 		});
 
 		return $sizes;
+	}
+
+	/**
+	 * Get triangle area
+	 *
+	 * @return float
+	 */
+	public function getArea() {
+		$sizes = $this->getSideSizes();
+
+		$p = array_sum($sizes) / 2;
+
+		return sqrt($p * ($p - $sizes[self::AB_SIDE]) * ($p - $sizes[self::AC_SIDE]) * ($p - $sizes[self::BC_SIDE]));
 	}
 }

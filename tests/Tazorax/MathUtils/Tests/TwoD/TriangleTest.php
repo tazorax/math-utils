@@ -92,5 +92,11 @@ class TriangleTest extends \PHPUnit_Framework_TestCase {
 		$this->assertTrue($t5->isIsosceles());
 		$this->assertFalse($t5->isEquilateral());
 
+		$this->assertEquals(6, $t1->getArea());
+		$this->assertEquals(0.5, $t2->getArea());
+		$this->assertEquals(1.5, $t3->getArea());
+		$this->assertEquals(0.43301270189222, $t4->getArea());
+		$this->assertEquals(1, $t5->getArea());
+
 	}
 }
