@@ -13,7 +13,7 @@ class Polygon {
 	const COMPARAISON_PRECISION = 12;
 
 	/**
-	 * @var Point2d []
+	 * @var Point2d[]
 	 */
 	protected $_points;
 
