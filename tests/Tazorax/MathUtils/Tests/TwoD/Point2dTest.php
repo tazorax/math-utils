@@ -1,6 +1,8 @@
 <?php
 
-namespace Tazorax\MathUtils\TwoD;
+namespace Tazorax\MathUtils\Tests\TwoD;
+use Tazorax\MathUtils\TwoD\Point2d;
+use Tazorax\MathUtils\TwoD\Vector2d;
 
 /**
  * Class Point2dTest
@@ -28,11 +30,11 @@ class Point2dTest extends \PHPUnit_Framework_TestCase {
 		$p1 = new Point2d(1, 2);
 		$p2 = new Point2d(1, 2);
 
-		$this->assertTrue($p1->equals($p2));
+		$this->assertTrue($p1->isEquals($p2));
 
 		$p3 = new Point2d(2, 2);
 
-		$this->assertFalse($p1->equals($p3));
+		$this->assertFalse($p1->isEquals($p3));
 	}
 
 	/**
@@ -49,15 +51,15 @@ class Point2dTest extends \PHPUnit_Framework_TestCase {
 		$v2 = new Vector2d(1, 3);
 
 		$this->assertTrue(Point2d::compareEquals($p3, $p4));
-		$this->assertTrue($p3->equals($p4));
-		$this->assertTrue($p3->equals(Point2d::subtract($p1, $v1)));
-		$this->assertTrue($p1->equals(Point2d::add($p2, $v2)));
+		$this->assertTrue($p3->isEquals($p4));
+		$this->assertTrue($p3->isEquals(Point2d::subtract($p1, $v1)));
+		$this->assertTrue($p1->isEquals(Point2d::add($p2, $v2)));
 
 		$this->assertTrue(Vector2d::compareEquals($v2, Point2d::subtractP($p1, $p2)));
 
 		$p1->offset(-1, -5);
 
-		$this->assertTrue($p1->equals($p5));
+		$this->assertTrue($p1->isEquals($p5));
 	}
 
 	/**

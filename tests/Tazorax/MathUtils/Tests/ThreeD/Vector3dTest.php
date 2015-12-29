@@ -1,6 +1,7 @@
 <?php
 
-namespace Tazorax\MathUtils\ThreeD;
+namespace Tazorax\MathUtils\Tests\ThreeD;
+use Tazorax\MathUtils\ThreeD\Vector3d;
 
 /**
  * Class Vector3dTest

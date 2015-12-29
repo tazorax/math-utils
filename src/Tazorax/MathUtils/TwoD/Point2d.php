@@ -49,7 +49,7 @@ class Point2d {
 	 * @param Point2d $point
 	 * @return bool
 	 */
-	public function equals(Point2d $point) {
+	public function isEquals(Point2d $point) {
 		return self::compareEquals($this, $point);
 	}
 

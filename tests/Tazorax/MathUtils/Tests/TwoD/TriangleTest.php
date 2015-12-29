@@ -1,6 +1,8 @@
 <?php
 
-namespace Tazorax\MathUtils\TwoD;
+namespace Tazorax\MathUtils\Tests\TwoD;
+use Tazorax\MathUtils\TwoD\Point2d;
+use Tazorax\MathUtils\TwoD\Triangle;
 
 /**
  * Class TriangleTest
@@ -18,9 +20,9 @@ class TriangleTest extends \PHPUnit_Framework_TestCase {
 
 		$t1 = new Triangle($pointA, $pointB, $pointC);
 
-		$this->assertTrue($pointA->equals($t1->getPointA()));
-		$this->assertTrue($pointB->equals($t1->getPointB()));
-		$this->assertTrue($pointC->equals($t1->getPointC()));
+		$this->assertTrue($pointA->isEquals($t1->getPointA()));
+		$this->assertTrue($pointB->isEquals($t1->getPointB()));
+		$this->assertTrue($pointC->isEquals($t1->getPointC()));
 
 		$t2 = new Triangle($pointA, $pointB, $pointC);
 
@@ -32,9 +34,9 @@ class TriangleTest extends \PHPUnit_Framework_TestCase {
 		$t2->setPointB($pointE);
 		$t2->setPointC($pointF);
 
-		$this->assertTrue($pointD->equals($t2->getPointA()));
-		$this->assertTrue($pointE->equals($t2->getPointB()));
-		$this->assertTrue($pointF->equals($t2->getPointC()));
+		$this->assertTrue($pointD->isEquals($t2->getPointA()));
+		$this->assertTrue($pointE->isEquals($t2->getPointB()));
+		$this->assertTrue($pointF->isEquals($t2->getPointC()));
 
 		$this->assertEquals(3, $t1->pointsCount());
 		$this->assertEquals(3, $t2->pointsCount());
