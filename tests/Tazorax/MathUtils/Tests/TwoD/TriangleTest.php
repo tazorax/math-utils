@@ -1,6 +1,7 @@
 <?php
 
 namespace Tazorax\MathUtils\Tests\TwoD;
+
 use Tazorax\MathUtils\TwoD\Point2d;
 use Tazorax\MathUtils\TwoD\Triangle;
 
@@ -103,11 +104,11 @@ class TriangleTest extends \PHPUnit_Framework_TestCase {
 		$this->assertEquals(0.43301270189222, $t4->getArea());
 		$this->assertEquals(1, $t5->getArea());
 
-		$this->assertEquals(9, $t1->getPerimeter());
-		$this->assertEquals(3.6502815398728847, $t2->getPerimeter());
-		$this->assertEquals(3.6502815398728847, $t3->getPerimeter());
-		$this->assertEquals(2, $t4->getPerimeter());
-		$this->assertEquals(3.0615528128088, $t5->getPerimeter());
+		$this->assertEquals(12, $t1->getPerimeter());
+		$this->assertEquals(7.2558328153369, $t2->getPerimeter());
+		$this->assertEquals(5.8863495173727, $t3->getPerimeter());
+		$this->assertEquals(3, $t4->getPerimeter());
+		$this->assertEquals(5.1231056256177, $t5->getPerimeter());
 
 	}
 
@@ -121,8 +122,8 @@ class TriangleTest extends \PHPUnit_Framework_TestCase {
 		$pointC = new Point2d(3, 0);
 		$pointD = new Point2d(5, 5);
 
-		$t1 = new Triangle($pointA, $pointB, $pointC);
-		$t1->addPoint($pointD);
+		$t = new Triangle($pointA, $pointB, $pointC);
+		$t->addPoint($pointD);
 	}
 
 	/**
@@ -135,7 +136,7 @@ class TriangleTest extends \PHPUnit_Framework_TestCase {
 		$pointC = new Point2d(3, 0);
 		$pointD = new Point2d(5, 5);
 
-		$t1 = new Triangle($pointA, $pointB, $pointC);
-		$t1->setPoint(3, $pointD);
+		$t = new Triangle($pointA, $pointB, $pointC);
+		$t->setPoint(3, $pointD);
 	}
 }

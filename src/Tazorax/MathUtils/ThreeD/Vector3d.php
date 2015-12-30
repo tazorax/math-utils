@@ -31,7 +31,7 @@ class Vector3d {
 		$this->y = $y;
 		$this->z = $z;
 	}
-	
+
 	/**
 	 * @return Vector3d
 	 */

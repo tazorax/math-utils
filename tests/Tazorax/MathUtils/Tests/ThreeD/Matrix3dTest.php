@@ -1,6 +1,7 @@
 <?php
 
 namespace Tazorax\MathUtils\Tests\ThreeD;
+
 use Tazorax\MathUtils\ThreeD\Matrix3d;
 
 /**

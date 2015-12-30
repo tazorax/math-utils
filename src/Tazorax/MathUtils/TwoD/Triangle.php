@@ -3,7 +3,7 @@
 namespace Tazorax\MathUtils\TwoD;
 
 /**
- * Class representing a triangle (geometric form)
+ * Represents a triangle (geometric form)
  *
  * @package Tazorax\MathUtils\TwoD
  */
@@ -116,11 +116,11 @@ class Triangle extends Polygon {
 	 * @throws \Exception
 	 */
 	public function setPoint($index, Point2d $point) {
-		if (in_array($index, array(0, 1, 2))) {
-			parent::setPoint($index, $point);
-		} else {
+		if (!in_array($index, array(0, 1, 2))) {
 			throw new \Exception('I am a triangle !');
 		}
+
+		parent::setPoint($index, $point);
 	}
 
 	/**

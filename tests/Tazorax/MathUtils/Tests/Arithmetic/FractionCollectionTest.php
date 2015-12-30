@@ -1,6 +1,7 @@
 <?php
 
 namespace Tazorax\MathUtils\Tests\Arithmetic;
+
 use Tazorax\MathUtils\Arithmetic\Fraction;
 use Tazorax\MathUtils\Arithmetic\FractionCollection;
 

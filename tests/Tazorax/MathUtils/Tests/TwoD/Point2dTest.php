@@ -1,6 +1,7 @@
 <?php
 
 namespace Tazorax\MathUtils\Tests\TwoD;
+
 use Tazorax\MathUtils\TwoD\Point2d;
 use Tazorax\MathUtils\TwoD\Vector2d;
 
