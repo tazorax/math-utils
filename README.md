@@ -6,7 +6,7 @@
 [![Dependency Status](https://img.shields.io/versioneye/d/php/tazorax:math-utils/dev-master.svg?style=flat-square)](https://www.versioneye.com/php/tazorax:math-utils/dev-master)
 [![GitHub license](https://img.shields.io/github/license/tazorax/math-utils.svg?style=flat-square)]()
 
-Mathematical objects for PHP 5.4, 5.5, 5.6, 7.0 and HHVM
+This library provide mathematical objects for PHP 5.4+
 
 ## Content
 ### 2D (WIP)
