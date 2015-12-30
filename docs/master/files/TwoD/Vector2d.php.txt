@@ -2,6 +2,11 @@
 
 namespace Tazorax\MathUtils\TwoD;
 
+/**
+ * Represents an orthonormal vector
+ *
+ * @package Tazorax\MathUtils\TwoD
+ */
 class Vector2d {
 	/**
 	 * @var float

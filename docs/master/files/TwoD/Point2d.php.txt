@@ -3,7 +3,8 @@
 namespace Tazorax\MathUtils\TwoD;
 
 /**
- * Class Point2d
+ * Represents an orthonormal point
+ *
  * @package Tazorax\MathUtils\TwoD
  */
 class Point2d {

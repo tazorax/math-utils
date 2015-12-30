@@ -3,7 +3,8 @@
 namespace Tazorax\MathUtils\TwoD;
 
 /**
- * Class Polygon
+ * Represents a polygon (geometric form)
+ *
  * @package Tazorax\MathUtils\TwoD
  */
 class Polygon {
@@ -86,6 +87,8 @@ class Polygon {
 			}
 			$last_point = $point;
 		}
+
+		$buffer += $last_point->distanceFrom(reset($this->_points));
 
 		return $buffer;
 	}
