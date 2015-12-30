@@ -66,5 +66,39 @@ class Polygon {
 	public function pointsCount() {
 		return count($this->_points);
 	}
+
+	/**
+	 * Get perimeter
+	 *
+	 * @return float
+	 * @throws \Exception
+	 */
+	public function getPerimeter() {
+		$this->checkPoints();
+
+		$buffer = 0;
+
+		$last_point = null;
+
+		foreach ($this->_points as $point) {
+			if (null !== $last_point) {
+				$buffer += $point->distanceFrom($last_point);
+			}
+			$last_point = $point;
+		}
+
+		return $buffer;
+	}
+
+	/**
+	 * Checks if it is a polygon (with 3 points min.)
+	 *
+	 * @throws \Exception
+	 */
+	private function checkPoints() {
+		if ($this->pointsCount() < 3) {
+			throw new \Exception('It is not a polygon, missing points !');
+		}
+	}
 }
 
