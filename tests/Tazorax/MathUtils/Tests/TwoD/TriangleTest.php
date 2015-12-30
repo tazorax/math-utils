@@ -103,5 +103,39 @@ class TriangleTest extends \PHPUnit_Framework_TestCase {
 		$this->assertEquals(0.43301270189222, $t4->getArea());
 		$this->assertEquals(1, $t5->getArea());
 
+		$this->assertEquals(9, $t1->getPerimeter());
+		$this->assertEquals(3.6502815398728847, $t2->getPerimeter());
+		$this->assertEquals(3.6502815398728847, $t3->getPerimeter());
+		$this->assertEquals(2, $t4->getPerimeter());
+		$this->assertEquals(3.0615528128088, $t5->getPerimeter());
+
+	}
+
+	/**
+	 * @expectedException        \Exception
+	 * @expectedExceptionMessage I am a triangle !
+	 */
+	public function testAddPointException() {
+		$pointA = new Point2d(0, 0);
+		$pointB = new Point2d(0, 4);
+		$pointC = new Point2d(3, 0);
+		$pointD = new Point2d(5, 5);
+
+		$t1 = new Triangle($pointA, $pointB, $pointC);
+		$t1->addPoint($pointD);
+	}
+
+	/**
+	 * @expectedException        \Exception
+	 * @expectedExceptionMessage I am a triangle !
+	 */
+	public function testSetPointException() {
+		$pointA = new Point2d(0, 0);
+		$pointB = new Point2d(0, 4);
+		$pointC = new Point2d(3, 0);
+		$pointD = new Point2d(5, 5);
+
+		$t1 = new Triangle($pointA, $pointB, $pointC);
+		$t1->setPoint(3, $pointD);
 	}
 }

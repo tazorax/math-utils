@@ -109,6 +109,31 @@ class Triangle extends Polygon {
 	}
 
 	/**
+	 * @inheritdoc
+	 *
+	 * @param int $index
+	 * @param Point2d $point
+	 * @throws \Exception
+	 */
+	public function setPoint($index, Point2d $point) {
+		if (in_array($index, array(0, 1, 2))) {
+			parent::setPoint($index, $point);
+		} else {
+			throw new \Exception('I am a triangle !');
+		}
+	}
+
+	/**
+	 * @inheritdoc
+	 *
+	 * @param Point2d $point
+	 * @throws \Exception
+	 */
+	public function addPoint(Point2d $point) {
+		throw new \Exception('I am a triangle !');
+	}
+
+	/**
 	 * Get the highest side.
 	 * If sizes are same, AB ou AC side will return first
 	 *

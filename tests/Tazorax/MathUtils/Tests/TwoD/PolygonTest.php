@@ -40,5 +40,14 @@ class PolygonTest extends \PHPUnit_Framework_TestCase {
 		$p1->getPoint(0);
 	}
 
+	/**
+	 * @expectedException        \Exception
+	 * @expectedExceptionMessage It is not a polygon, missing points !
+	 */
+	public function testGetPerimeterException() {
+		$p1 = new Polygon();
+		$p1->getPerimeter();
+	}
+
 
 }
