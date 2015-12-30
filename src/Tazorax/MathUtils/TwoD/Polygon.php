@@ -103,4 +103,20 @@ class Polygon {
 			throw new \Exception('It is not a polygon, missing points !');
 		}
 	}
+
+	/**
+	 * Apply a vector on each point and return a new instance of Polygon
+	 *
+	 * @param Vector2d $vector
+	 * @return Polygon
+	 */
+	public function translate(Vector2d $vector) {
+		$buffer = clone $this;
+
+		foreach ($buffer->_points as $index => $point) {
+			$buffer->setPoint($index, Point2d::add($point, $vector));
+		}
+
+		return $buffer;
+	}
 }
