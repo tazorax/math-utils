@@ -1,6 +1,7 @@
 <?php
 
 namespace Tazorax\MathUtils\TwoD;
+use Tazorax\MathUtils\Exception;
 
 /**
  * Represents a rectangle (geometric form)
@@ -45,7 +46,7 @@ class Rectangle extends Polygon {
 		$test4 = new Triangle($pointD, $pointA, $pointB);
 
 		if (!$test1->isRight() || !$test2->isRight() || !$test3->isRight() || !$test4->isRight()) {
-			throw new \Exception('Points must be draw a rectangle !');
+			throw new Exception('Points must be draw a rectangle !');
 		}
 
 		$this->setPointA($pointA);
@@ -135,7 +136,7 @@ class Rectangle extends Polygon {
 	 */
 	public function setPoint($index, Point2d $point) {
 		if (!in_array($index, array(0, 1, 2, 3))) {
-			throw new \Exception('I am a rectangle !');
+			throw new Exception('I am a rectangle !');
 		}
 
 		parent::setPoint($index, $point);
@@ -148,7 +149,7 @@ class Rectangle extends Polygon {
 	 * @throws \Exception
 	 */
 	public function addPoint(Point2d $point) {
-		throw new \Exception('I am a rectangle !');
+		throw new Exception('I am a rectangle !');
 	}
 }
 

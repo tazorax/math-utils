@@ -1,6 +1,7 @@
 <?php
 
 namespace Tazorax\MathUtils\ThreeD;
+use Tazorax\MathUtils\Exception;
 
 /**
  * Class Vector3d
@@ -65,7 +66,7 @@ class Vector3d {
 			$y = $this->y / $tmp;
 			$z = $this->z / $tmp;
 		} else {
-			throw new \Exception('len = 0');
+			throw new Exception('len = 0');
 		}
 
 		return new Vector3d($x, $y, $z);
