@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of the MathUtils package.
+ *
+ * (c) tazorax <tazorax@gmail.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Tazorax\MathUtils\TwoD;
 use Tazorax\MathUtils\Exception;
 
@@ -136,7 +145,7 @@ class Triangle extends Polygon {
 
 	/**
 	 * Get the highest side.
-	 * If sizes are same, AB ou AC side will return first
+	 * If sizes are same, AB or AC side will return first
 	 *
 	 * @return int
 	 */
