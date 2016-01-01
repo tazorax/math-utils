@@ -2,6 +2,7 @@
 
 namespace Tazorax\MathUtils\Tests\ThreeD;
 
+use Tazorax\MathUtils\Exception;
 use Tazorax\MathUtils\ThreeD\Vector3d;
 
 /**
@@ -44,7 +45,7 @@ class Vector3dTest extends \PHPUnit_Framework_TestCase {
 	}
 
 	/**
-	 * @expectedException        \Exception
+	 * @expectedException        Exception
 	 * @expectedExceptionMessage len = 0
 	 */
 	public function testNormalizeException() {

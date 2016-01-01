@@ -1,6 +1,7 @@
 <?php
 
 namespace Tazorax\MathUtils\TwoD;
+use Tazorax\MathUtils\Exception;
 
 /**
  * Represents a polygon (geometric form)
@@ -43,7 +44,7 @@ class Polygon {
 	 */
 	public function getPoint($index) {
 		if (!isset($this->_points[$index])) {
-			throw new \Exception('This point doest not exist');
+			throw new Exception('This point doest not exist');
 		}
 
 		return $this->_points[$index];
@@ -100,7 +101,7 @@ class Polygon {
 	 */
 	private function checkPoints() {
 		if ($this->pointsCount() < 3) {
-			throw new \Exception('It is not a polygon, missing points !');
+			throw new Exception('It is not a polygon, missing points !');
 		}
 	}
 
@@ -133,7 +134,7 @@ class Polygon {
 		foreach ($this->_points as $index => $point) {
 			try {
 				$buffer = $buffer && $point->isEquals($polygon->getPoint($index));
-			} catch (\Exception $e) {
+			} catch (Exception $e) {
 				$buffer = false;
 			}
 		}

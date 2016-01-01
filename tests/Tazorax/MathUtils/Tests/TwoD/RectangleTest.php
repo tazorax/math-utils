@@ -2,6 +2,7 @@
 
 namespace Tazorax\MathUtils\Tests\TwoD;
 
+use Tazorax\MathUtils\Exception;
 use Tazorax\MathUtils\TwoD\Point2d;
 use Tazorax\MathUtils\TwoD\Rectangle;
 
@@ -28,7 +29,7 @@ class RectangleTest extends \PHPUnit_Framework_TestCase {
 	}
 
 	/**
-	 * @expectedException        \Exception
+	 * @expectedException        Exception
 	 * @expectedExceptionMessage Points must be draw a rectangle !
 	 */
 	public function testNewException() {
@@ -41,7 +42,7 @@ class RectangleTest extends \PHPUnit_Framework_TestCase {
 	}
 
 	/**
-	 * @expectedException        \Exception
+	 * @expectedException        Exception
 	 * @expectedExceptionMessage I am a rectangle !
 	 */
 	public function testAddPointException() {
@@ -56,7 +57,7 @@ class RectangleTest extends \PHPUnit_Framework_TestCase {
 	}
 
 	/**
-	 * @expectedException        \Exception
+	 * @expectedException        Exception
 	 * @expectedExceptionMessage I am a rectangle !
 	 */
 	public function testSetPointException() {

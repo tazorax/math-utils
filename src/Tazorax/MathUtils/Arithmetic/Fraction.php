@@ -1,6 +1,7 @@
 <?php
 
 namespace Tazorax\MathUtils\Arithmetic;
+use Tazorax\MathUtils\Exception;
 
 /**
  * Class representing a fraction number
@@ -51,7 +52,7 @@ class Fraction {
 	 */
 	public function floatValue() {
 		if ($this->denominator === 0) {
-			throw new \Exception('Denominator is 0, can\'t divide by 0');
+			throw new Exception('Denominator is 0, can\'t divide by 0');
 		}
 
 		return $this->numerator / $this->denominator;

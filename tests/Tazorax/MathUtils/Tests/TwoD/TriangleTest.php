@@ -2,6 +2,7 @@
 
 namespace Tazorax\MathUtils\Tests\TwoD;
 
+use Tazorax\MathUtils\Exception;
 use Tazorax\MathUtils\TwoD\Point2d;
 use Tazorax\MathUtils\TwoD\Triangle;
 
@@ -113,7 +114,7 @@ class TriangleTest extends \PHPUnit_Framework_TestCase {
 	}
 
 	/**
-	 * @expectedException        \Exception
+	 * @expectedException        Exception
 	 * @expectedExceptionMessage I am a triangle !
 	 */
 	public function testAddPointException() {
@@ -127,7 +128,7 @@ class TriangleTest extends \PHPUnit_Framework_TestCase {
 	}
 
 	/**
-	 * @expectedException        \Exception
+	 * @expectedException        Exception
 	 * @expectedExceptionMessage I am a triangle !
 	 */
 	public function testSetPointException() {

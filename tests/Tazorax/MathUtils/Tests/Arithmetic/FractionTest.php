@@ -3,6 +3,7 @@
 namespace Tazorax\MathUtils\Tests\Arithmetic;
 
 use Tazorax\MathUtils\Arithmetic\Fraction;
+use Tazorax\MathUtils\Exception;
 
 /**
  * Class FractionTest
@@ -57,7 +58,7 @@ class FractionTest extends \PHPUnit_Framework_TestCase {
 	}
 
 	/**
-	 * @expectedException        \Exception
+	 * @expectedException        Exception
 	 * @expectedExceptionMessage Denominator is 0, can't divide by 0
 	 */
 	public function testFloatValueException() {

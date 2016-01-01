@@ -2,6 +2,7 @@
 
 namespace Tazorax\MathUtils\Tests\TwoD;
 
+use Tazorax\MathUtils\Exception;
 use Tazorax\MathUtils\TwoD\Point2d;
 use Tazorax\MathUtils\TwoD\Polygon;
 use Tazorax\MathUtils\TwoD\Vector2d;
@@ -12,6 +13,9 @@ use Tazorax\MathUtils\TwoD\Vector2d;
  */
 class PolygonTest extends \PHPUnit_Framework_TestCase {
 
+	/**
+	 *
+	 */
 	public function testNew() {
 		$p1 = new Polygon();
 
@@ -34,7 +38,7 @@ class PolygonTest extends \PHPUnit_Framework_TestCase {
 	}
 
 	/**
-	 * @expectedException        \Exception
+	 * @expectedException        Exception
 	 * @expectedExceptionMessage This point doest not exist
 	 */
 	public function testGetPointException() {
@@ -43,7 +47,7 @@ class PolygonTest extends \PHPUnit_Framework_TestCase {
 	}
 
 	/**
-	 * @expectedException        \Exception
+	 * @expectedException        Exception
 	 * @expectedExceptionMessage It is not a polygon, missing points !
 	 */
 	public function testGetPerimeterException() {
@@ -51,6 +55,9 @@ class PolygonTest extends \PHPUnit_Framework_TestCase {
 		$p1->getPerimeter();
 	}
 
+	/**
+	 *
+	 */
 	public function testTranslate() {
 		$p1 = new Polygon();
 		$p1->addPoint(new Point2d(0, 0));
