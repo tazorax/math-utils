@@ -4,6 +4,7 @@ namespace Tazorax\MathUtils\Tests\TwoD;
 
 use Tazorax\MathUtils\TwoD\Point2d;
 use Tazorax\MathUtils\TwoD\Polygon;
+use Tazorax\MathUtils\TwoD\Vector2d;
 
 /**
  * Class PolygonTest
@@ -50,5 +51,26 @@ class PolygonTest extends \PHPUnit_Framework_TestCase {
 		$p1->getPerimeter();
 	}
 
+	public function testTranslate() {
+		$p1 = new Polygon();
+		$p1->addPoint(new Point2d(0, 0));
+		$p1->addPoint(new Point2d(1, 1));
+		$p1->addPoint(new Point2d(1, 2));
+		$p1->addPoint(new Point2d(0, 3));
+		$p1->addPoint(new Point2d(0, 4));
 
+		$p2 = new Polygon();
+		$p2->addPoint(new Point2d(2, 1));
+		$p2->addPoint(new Point2d(3, 2));
+		$p2->addPoint(new Point2d(3, 3));
+		$p2->addPoint(new Point2d(2, 4));
+		$p2->addPoint(new Point2d(2, 5));
+
+		$this->assertTrue($p2->isEquals($p1->translate(new Vector2d(2, 1))));
+		$this->assertFalse($p2->isEquals($p1->translate(new Vector2d(2, 2))));
+
+		$p2->addPoint(new Point2d(1, 0));
+
+		$this->assertFalse($p2->isEquals($p1->translate(new Vector2d(2, 1))));
+	}
 }
