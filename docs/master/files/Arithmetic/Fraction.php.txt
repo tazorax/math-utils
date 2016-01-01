@@ -48,7 +48,7 @@ class Fraction {
 	 * Give a float representation of this fraction
 	 *
 	 * @return float
-	 * @throws \Exception
+	 * @throws Exception
 	 */
 	public function floatValue() {
 		if ($this->denominator === 0) {

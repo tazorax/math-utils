@@ -57,7 +57,7 @@ class Vector3d {
 	}
 
 	/**
-	 * @throws \Exception
+	 * @throws Exception
 	 */
 	public function normalize() {
 		$tmp = $this->len();
