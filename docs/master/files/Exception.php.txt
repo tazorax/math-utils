@@ -10,3 +10,4 @@ namespace Tazorax\MathUtils;
 class Exception extends \Exception {
 
 }
+
