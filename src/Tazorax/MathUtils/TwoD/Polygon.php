@@ -40,7 +40,7 @@ class Polygon {
 	 *
 	 * @param int $index
 	 * @return Point2d
-	 * @throws \Exception
+	 * @throws Exception
 	 */
 	public function getPoint($index) {
 		if (!isset($this->_points[$index])) {
@@ -73,7 +73,7 @@ class Polygon {
 	 * Get perimeter
 	 *
 	 * @return float
-	 * @throws \Exception
+	 * @throws Exception
 	 */
 	public function getPerimeter() {
 		$this->checkPoints();
@@ -97,7 +97,7 @@ class Polygon {
 	/**
 	 * Checks if it is a polygon (with 3 points min.)
 	 *
-	 * @throws \Exception
+	 * @throws Exception
 	 */
 	private function checkPoints() {
 		if ($this->pointsCount() < 3) {
@@ -126,7 +126,7 @@ class Polygon {
 	 *
 	 * @param Polygon $polygon
 	 * @return bool
-	 * @throws \Exception
+	 * @throws Exception
 	 */
 	public function isEquals(Polygon $polygon) {
 		$buffer = true;

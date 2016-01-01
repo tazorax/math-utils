@@ -114,7 +114,7 @@ class Triangle extends Polygon {
 	 *
 	 * @param int $index
 	 * @param Point2d $point
-	 * @throws \Exception
+	 * @throws Exception
 	 */
 	public function setPoint($index, Point2d $point) {
 		if (!in_array($index, array(0, 1, 2))) {
@@ -128,7 +128,7 @@ class Triangle extends Polygon {
 	 * @inheritdoc
 	 *
 	 * @param Point2d $point
-	 * @throws \Exception
+	 * @throws Exception
 	 */
 	public function addPoint(Point2d $point) {
 		throw new Exception('I am a triangle !');
