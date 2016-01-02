@@ -12,7 +12,9 @@ This library provide mathematical objects for PHP 5.4+
 ### 2D (WIP)
 - Point2d
 - Polygon
+- Rectangle
 - Triangle
+- Utils
 - Vector2d
 
 ### 3D (WIP)

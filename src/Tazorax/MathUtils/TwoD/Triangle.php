@@ -10,6 +10,7 @@
  */
 
 namespace Tazorax\MathUtils\TwoD;
+
 use Tazorax\MathUtils\Exception;
 
 /**
@@ -169,16 +170,13 @@ class Triangle extends Polygon {
 	 * @return bool
 	 */
 	public function isRight() {
-		$sizes = $this->getSideSizes();
-		$high_side = $this->getHighSide();
+		$angles = [
+			Utils::getAngle($this->getPointA(), $this->getPointB(), $this->getPointC()),
+			Utils::getAngle($this->getPointB(), $this->getPointA(), $this->getPointC()),
+			Utils::getAngle($this->getPointC(), $this->getPointA(), $this->getPointB())
+		];
 
-		$high_side_size = $sizes[$high_side];
-
-		unset($sizes[$high_side]);
-
-		$other_sizes = array_values($sizes);
-
-		return pow($high_side_size, 2) == pow($other_sizes[0], 2) + pow($other_sizes[1], 2);
+		return in_array(deg2rad(90), $angles);
 	}
 
 	/**
