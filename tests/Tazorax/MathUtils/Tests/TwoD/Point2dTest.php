@@ -11,6 +11,7 @@
 
 namespace Tazorax\MathUtils\Tests\TwoD;
 
+use Tazorax\MathUtils\Exception;
 use Tazorax\MathUtils\TwoD\Point2d;
 use Tazorax\MathUtils\TwoD\Vector2d;
 
@@ -86,5 +87,29 @@ class Point2dTest extends \PHPUnit_Framework_TestCase {
 
 		$p4 = new Point2d(5, 1);
 		$this->assertEquals(5.6568542494924, $p1->distanceFrom($p4));
+	}
+
+	/**
+	 *
+	 */
+	public function testGetAngle() {
+		$p1 = new Point2d(0, 0);
+		$p2 = new Point2d(0, 5);
+		$p3 = new Point2d(5, 0);
+
+		$this->assertEquals(deg2rad(90), Point2d::getAngle($p1, $p2, $p3));
+		$this->assertEquals(deg2rad(90), Point2d::getAngle($p1, $p3, $p2));
+	}
+
+	/**
+	 * @expectedException        Exception
+	 * @expectedExceptionMessage Points must be different than the center point!
+	 */
+	public function testGetAngleException() {
+		$p1 = new Point2d(0, 0);
+		$p2 = new Point2d(0, 0);
+		$p3 = new Point2d(0, 3);
+
+		Point2d::getAngle($p1, $p2, $p3);
 	}
 }

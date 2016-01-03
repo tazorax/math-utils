@@ -13,7 +13,6 @@ This library provide mathematical objects for PHP 5.4+
 - Polygon
 - Rectangle
 - Triangle
-- Utils
 - Vector2d
 
 ### 3D (WIP)
