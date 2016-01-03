@@ -56,7 +56,7 @@ class Rectangle extends Polygon {
 		$test4 = Utils::getAngle($pointD, $pointC, $pointA);
 
 		if ($test1 != deg2rad(90) || $test2 != deg2rad(90) || $test3 != deg2rad(90) || $test4 != deg2rad(90)) {
-			throw new Exception('Points must be draw a rectangle !');
+			throw new Exception('Points must be draw a rectangle!');
 		}
 
 		$this->setPointA($pointA);
@@ -146,7 +146,7 @@ class Rectangle extends Polygon {
 	 */
 	public function setPoint($index, Point2d $point) {
 		if (!in_array($index, array(0, 1, 2, 3))) {
-			throw new Exception('I am a rectangle !');
+			throw new Exception('I am a rectangle!');
 		}
 
 		parent::setPoint($index, $point);
@@ -159,7 +159,7 @@ class Rectangle extends Polygon {
 	 * @throws Exception
 	 */
 	public function addPoint(Point2d $point) {
-		throw new Exception('I am a rectangle !');
+		throw new Exception('I am a rectangle!');
 	}
 }
 

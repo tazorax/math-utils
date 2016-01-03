@@ -19,28 +19,24 @@ use Tazorax\MathUtils\Exception;
  */
 class Utils {
 	/**
-	 * Get angle (radians) on $pointA
+	 * Get angle (radians) on center
 	 *
-	 * @param Point2d $pointA
-	 * @param Point2d $pointB
-	 * @param Point2d $pointC
+	 * @param Point2d $center
+	 * @param Point2d $point1
+	 * @param Point2d $point2
 	 * @return float
 	 * @throws Exception
 	 */
-	public static function getAngle(Point2d $pointA, Point2d $pointB, Point2d $pointC) {
-		$a = Point2d::distance($pointB, $pointC);
-		$b = Point2d::distance($pointA, $pointC);
-		$c = Point2d::distance($pointA, $pointB);
-
-		if ($b == 0 || $c == 0) {
-			throw new Exception('B and C points must be different than A point !');
+	public static function getAngle(Point2d $center, Point2d $point1, Point2d $point2) {
+		if ($point1->isEquals($center) || $point1->isEquals($center)) {
+			throw new Exception('Points must be different than the center point!');
 		}
 
-		$buffer = ((pow($b, 2) + pow($c, 2) - pow($a, 2)) / 2 * $b * $c);
+		$a = pow($center->x - $point2->x, 2) + pow($center->y - $point2->y, 2);
+		$b = pow($center->x - $point1->x, 2) + pow($center->y - $point1->y, 2);
+		$c = pow($point2->x - $point1->x, 2) + pow($point2->y - $point1->y, 2);
 
-		$buffer = acos($buffer);
-
-		return $buffer;
+		return acos(($a + $b - $c) / sqrt(4 * $a * $b));
 	}
 }
 
