@@ -124,7 +124,7 @@ class TriangleTest extends \PHPUnit_Framework_TestCase {
 
 	/**
 	 * @expectedException        Exception
-	 * @expectedExceptionMessage I am a triangle !
+	 * @expectedExceptionMessage I am a triangle!
 	 */
 	public function testAddPointException() {
 		$pointA = new Point2d(0, 0);
@@ -138,7 +138,7 @@ class TriangleTest extends \PHPUnit_Framework_TestCase {
 
 	/**
 	 * @expectedException        Exception
-	 * @expectedExceptionMessage I am a triangle !
+	 * @expectedExceptionMessage I am a triangle!
 	 */
 	public function testSetPointException() {
 		$pointA = new Point2d(0, 0);

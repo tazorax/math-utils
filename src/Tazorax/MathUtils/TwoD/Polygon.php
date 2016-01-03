@@ -110,7 +110,7 @@ class Polygon {
 	 */
 	private function checkPoints() {
 		if ($this->pointsCount() < 3) {
-			throw new Exception('It is not a polygon, missing points !');
+			throw new Exception('It is not a polygon, missing points!');
 		}
 	}
 

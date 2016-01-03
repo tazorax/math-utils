@@ -44,4 +44,37 @@ class Vector2d {
 	public static function compareEquals(Vector2d $vector1, Vector2d $vector2) {
 		return $vector1->x == $vector2->x && $vector1->y == $vector2->y;
 	}
+
+	public function norm() {
+		return sqrt($this->x * $this->x + $this->y * $this->y);
+	}
+
+	public function dot(Vector2d $vector) {
+		return ($this->x * $vector->x + $this->y * $vector->y);
+	}
+
+	public function length() {
+		return sqrt($this->x * $this->x + $this->y * $this->y);
+	}
+
+	public function normalize() {
+		$buffer = new self;
+
+		$length = $this->length();
+
+		if ($length != 0) {
+			$buffer->x = $this->x / $length;
+			$buffer->y = $this->y / $length;
+		}
+
+		return $buffer;
+	}
+
+	public function substract(Vector2d $vector) {
+		return new self($this->x - $vector->x, $this->y - $vector->y);
+	}
+
+	public function add(Vector2d $vector) {
+		return new self($this->x + $vector->x, $this->y + $vector->y);
+	}
 }

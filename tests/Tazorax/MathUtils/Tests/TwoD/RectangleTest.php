@@ -39,7 +39,7 @@ class RectangleTest extends \PHPUnit_Framework_TestCase {
 
 	/**
 	 * @expectedException        Exception
-	 * @expectedExceptionMessage Points must be draw a rectangle !
+	 * @expectedExceptionMessage Points must be draw a rectangle!
 	 */
 	public function testNewException() {
 		$pointA = new Point2d(0, 0);
@@ -52,7 +52,7 @@ class RectangleTest extends \PHPUnit_Framework_TestCase {
 
 	/**
 	 * @expectedException        Exception
-	 * @expectedExceptionMessage I am a rectangle !
+	 * @expectedExceptionMessage I am a rectangle!
 	 */
 	public function testAddPointException() {
 		$pointA = new Point2d(0, 0);
@@ -67,7 +67,7 @@ class RectangleTest extends \PHPUnit_Framework_TestCase {
 
 	/**
 	 * @expectedException        Exception
-	 * @expectedExceptionMessage I am a rectangle !
+	 * @expectedExceptionMessage I am a rectangle!
 	 */
 	public function testSetPointException() {
 		$pointA = new Point2d(0, 0);
