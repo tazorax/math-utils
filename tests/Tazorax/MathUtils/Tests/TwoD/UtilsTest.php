@@ -28,7 +28,7 @@ class UtilsTest extends \PHPUnit_Framework_TestCase {
 		$p1 = new Point2d(0, 0);
 		$p2 = new Point2d(0, 5);
 		$p3 = new Point2d(5, 0);
-var_dump(1.5707963267949, deg2rad(90));
+
 		$this->assertEquals(deg2rad(90), Utils::getAngle($p1, $p2, $p3));
 		$this->assertEquals(deg2rad(90), Utils::getAngle($p1, $p3, $p2));
 	}

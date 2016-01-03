@@ -2,7 +2,6 @@
 [![Build Status](https://img.shields.io/travis/tazorax/math-utils/master.svg?style=flat-square)](https://travis-ci.org/tazorax/math-utils) 
 [![Coverage Status](https://img.shields.io/coveralls/tazorax/math-utils/master.svg?style=flat-square)](https://coveralls.io/github/tazorax/math-utils?branch=master)
 [![SensioLabs Insight](https://img.shields.io/sensiolabs/i/ec922a73-2fa9-4e43-b59a-881afc110b73.svg?style=flat-square)](https://insight.sensiolabs.com/projects/ec922a73-2fa9-4e43-b59a-881afc110b73)
-[![HHVM compatible](https://img.shields.io/hhvm/tazorax/math-utils/master.svg?style=flat-square)]()
 [![Dependency Status](https://img.shields.io/versioneye/d/php/tazorax:math-utils/dev-master.svg?style=flat-square)](https://www.versioneye.com/php/tazorax:math-utils/dev-master)
 [![GitHub license](https://img.shields.io/github/license/tazorax/math-utils.svg?style=flat-square)](https://github.com/tazorax/math-utils/blob/master/LICENSE)
 
