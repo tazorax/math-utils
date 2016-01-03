@@ -32,25 +32,25 @@ class Vector3dTest extends \PHPUnit_Framework_TestCase {
 	/**
 	 *
 	 */
-	public function testLen() {
+	public function testLength() {
 		$v1 = new Vector3d(1, 2, 3);
 		$v2 = new Vector3d(3, 2, 1);
 
-		$this->assertEquals(3.741657386773941, $v1->len());
-		$this->assertEquals($v1->len(), $v2->len());
+		$this->assertEquals(3.741657386773941, $v1->length());
+		$this->assertEquals($v1->length(), $v2->length());
 	}
 
 	/**
-	 * @throws \Exception
+	 *
 	 */
 	public function testNormalize() {
 		$v1 = new Vector3d(1, 2, 3);
-		$v2 = $v1->normalize();
+		$v1->normalize();
 
-		$this->assertEquals($v2->len(), 1);
-		$this->assertEquals($v2->x, 0.267261241912424);
-		$this->assertEquals($v2->y, 0.534522483824849);
-		$this->assertEquals($v2->z, 0.8017837257372730);
+		$this->assertEquals(1, $v1->length());
+		$this->assertEquals(0.267261241912424, $v1->x);
+		$this->assertEquals(0.534522483824849, $v1->y);
+		$this->assertEquals(0.8017837257372730, $v1->z);
 	}
 
 	/**
@@ -60,6 +60,24 @@ class Vector3dTest extends \PHPUnit_Framework_TestCase {
 	public function testNormalizeException() {
 		$v1 = new Vector3d(0, 0, 0);
 		$v1->normalize();
+	}
+
+	/**
+	 *
+	 */
+	public function testDot() {
+		$v1 = new Vector3d(1, 1, 1);
+		$v2 = new Vector3d(1, 1, 1);
+
+		$this->assertEquals(3, $v1->dot($v2));
+
+		$v3 = new Vector3d(-1, 1, 1);
+
+		$this->assertEquals(1, $v1->dot($v3));
+
+		$v4 = new Vector3d(-1, -1, -1);
+
+		$this->assertEquals(-3, $v1->dot($v4));
 	}
 
 	/**

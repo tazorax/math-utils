@@ -10,6 +10,7 @@
  */
 
 namespace Tazorax\MathUtils\ThreeD;
+
 use Tazorax\MathUtils\Exception;
 
 /**
@@ -46,39 +47,53 @@ class Vector3d {
 	 * @return Vector3d
 	 */
 	public function inverse() {
-		return new Vector3d(-$this->x, -$this->y, -$this->z);
+		return new self(-$this->x, -$this->y, -$this->z);
 	}
 
 	/**
+	 * Computes the dot product of the this vector and vector $vector.
+	 *
+	 * @param Vector3d $vector the other vector
 	 * @return float
 	 */
-	public function len2() {
+	public function dot(Vector3d $vector) {
+		return ($this->x * $vector->x + $this->y * $vector->y + $this->z * $vector->z);
+	}
+
+	/**
+	 * Returns the squared length of this vector.
+	 *
+	 * @return float the squared length of this vector
+	 */
+	public function lengthSquared() {
 		return ($this->x * $this->x +
 			$this->y * $this->y +
 			$this->z * $this->z);
 	}
 
 	/**
-	 * @return float
+	 * Returns the length of this vector.
+	 *
+	 * @return float the length of this vector
 	 */
-	public function len() {
-		return (sqrt($this->len2()));
+	public function length() {
+		return (sqrt($this->lengthSquared()));
 	}
 
 	/**
+	 * Normalizes this vector in place.
+	 *
 	 * @throws Exception
 	 */
 	public function normalize() {
-		$tmp = $this->len();
+		$tmp = $this->length();
 		if (abs($tmp) > 1e-7) {
-			$x = $this->x / $tmp;
-			$y = $this->y / $tmp;
-			$z = $this->z / $tmp;
+			$this->x = $this->x / $tmp;
+			$this->y = $this->y / $tmp;
+			$this->z = $this->z / $tmp;
 		} else {
 			throw new Exception('len = 0');
 		}
-
-		return new Vector3d($x, $y, $z);
 	}
 
 	/**
@@ -151,7 +166,7 @@ class Vector3d {
 	 * @return Vector3d
 	 */
 	public static function add(Vector3d $vector, $x, $y, $z) {
-		return new Vector3d($vector->x + $x, $vector->y + $y, $vector->z + $z);
+		return new self($vector->x + $x, $vector->y + $y, $vector->z + $z);
 	}
 
 	/**

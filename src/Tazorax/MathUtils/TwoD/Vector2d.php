@@ -10,6 +10,7 @@
  */
 
 namespace Tazorax\MathUtils\TwoD;
+use Tazorax\MathUtils\Exception;
 
 /**
  * Represents an orthonormal vector
@@ -28,12 +29,21 @@ class Vector2d {
 
 	/**
 	 * Vector2d constructor.
+	 *
 	 * @param float $x
 	 * @param float $y
 	 */
 	public function __construct($x = 0, $y = 0) {
 		$this->x = $x;
 		$this->y = $y;
+	}
+
+	/**
+	 * @param Vector2d $vector
+	 * @return bool
+	 */
+	public function isEquals(Vector2d $vector) {
+		return self::compareEquals($this, $vector);
 	}
 
 	/**
@@ -45,35 +55,60 @@ class Vector2d {
 		return $vector1->x == $vector2->x && $vector1->y == $vector2->y;
 	}
 
-	public function norm() {
-		return sqrt($this->x * $this->x + $this->y * $this->y);
-	}
-
+	/**
+	 * Computes the dot product of the this vector and vector $vector.
+	 *
+	 * @param Vector2d $vector the other vector
+	 * @return float
+	 */
 	public function dot(Vector2d $vector) {
 		return ($this->x * $vector->x + $this->y * $vector->y);
 	}
 
+	/**
+	 * Returns the squared length of this vector.
+	 *
+	 * @return float the squared length of this vector
+	 */
+	public function lengthSquared() {
+		return ($this->x * $this->x +
+			$this->y * $this->y);
+	}
+
+	/**
+	 * Returns the length of this vector.
+	 *
+	 * @return float the length of this vector
+	 */
 	public function length() {
-		return sqrt($this->x * $this->x + $this->y * $this->y);
+		return sqrt($this->lengthSquared());
 	}
 
+	/**
+	 * Normalizes this vector in place.
+	 */
 	public function normalize() {
-		$buffer = new self;
-
-		$length = $this->length();
-
-		if ($length != 0) {
-			$buffer->x = $this->x / $length;
-			$buffer->y = $this->y / $length;
+		$tmp = $this->length();
+		if (abs($tmp) > 1e-7) {
+			$this->x = $this->x / $tmp;
+			$this->y = $this->y / $tmp;
+		} else {
+			throw new Exception('len = 0');
 		}
-
-		return $buffer;
 	}
 
-	public function substract(Vector2d $vector) {
+	/**
+	 * @param Vector2d $vector
+	 * @return Vector2d
+	 */
+	public function sub(Vector2d $vector) {
 		return new self($this->x - $vector->x, $this->y - $vector->y);
 	}
 
+	/**
+	 * @param Vector2d $vector
+	 * @return Vector2d
+	 */
 	public function add(Vector2d $vector) {
 		return new self($this->x + $vector->x, $this->y + $vector->y);
 	}
