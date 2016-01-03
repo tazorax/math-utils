@@ -11,7 +11,7 @@ before_install:
   - sudo bash build-tools/travis_shell_before_install.sh
 install:
   - curl -s http://getcomposer.org/installer | php
-  - php composer.phar install --no-interaction
+  - php --no-php-ini -d allow_url_fopen=On -d detect_unicode=Off composer.phar install --no-interaction
   - mkdir -p build/docs
   - mkdir -p build/logs
 script:
