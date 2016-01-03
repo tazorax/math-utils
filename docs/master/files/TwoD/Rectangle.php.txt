@@ -10,6 +10,7 @@
  */
 
 namespace Tazorax\MathUtils\TwoD;
+
 use Tazorax\MathUtils\Exception;
 
 /**
@@ -49,12 +50,12 @@ class Rectangle extends Polygon {
 	public function __construct(Point2d $pointA, Point2d $pointB, Point2d $pointC, Point2d $pointD) {
 		parent::__construct();
 
-		$test1 = new Triangle($pointA, $pointB, $pointC);
-		$test2 = new Triangle($pointB, $pointC, $pointD);
-		$test3 = new Triangle($pointC, $pointD, $pointA);
-		$test4 = new Triangle($pointD, $pointA, $pointB);
+		$test1 = Utils::getAngle($pointA, $pointD, $pointB);
+		$test2 = Utils::getAngle($pointB, $pointA, $pointC);
+		$test3 = Utils::getAngle($pointC, $pointB, $pointD);
+		$test4 = Utils::getAngle($pointD, $pointC, $pointA);
 
-		if (!$test1->isRight() || !$test2->isRight() || !$test3->isRight() || !$test4->isRight()) {
+		if ($test1 != deg2rad(90) || $test2 != deg2rad(90) || $test3 != deg2rad(90) || $test4 != deg2rad(90)) {
 			throw new Exception('Points must be draw a rectangle !');
 		}
 

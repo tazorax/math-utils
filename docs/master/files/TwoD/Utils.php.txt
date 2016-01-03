@@ -36,7 +36,11 @@ class Utils {
 			throw new Exception('B and C points must be different than A point !');
 		}
 
-		return acos((pow($b, 2) + pow($c, 2) - pow($a, 2)) / 2 * $b * $c);
+		$buffer = ((pow($b, 2) + pow($c, 2) - pow($a, 2)) / 2 * $b * $c);
+
+		$buffer = acos($buffer);
+
+		return $buffer;
 	}
 }
 
