@@ -171,9 +171,9 @@ class Triangle extends Polygon {
 	 */
 	public function isRight() {
 		$angles = [
-			Utils::getAngle($this->getPointA(), $this->getPointB(), $this->getPointC()),
-			Utils::getAngle($this->getPointB(), $this->getPointA(), $this->getPointC()),
-			Utils::getAngle($this->getPointC(), $this->getPointA(), $this->getPointB())
+			Point2d::getAngle($this->getPointA(), $this->getPointB(), $this->getPointC()),
+			Point2d::getAngle($this->getPointB(), $this->getPointA(), $this->getPointC()),
+			Point2d::getAngle($this->getPointC(), $this->getPointA(), $this->getPointB())
 		];
 
 		return in_array(deg2rad(90), $angles);

@@ -50,10 +50,10 @@ class Rectangle extends Polygon {
 	public function __construct(Point2d $pointA, Point2d $pointB, Point2d $pointC, Point2d $pointD) {
 		parent::__construct();
 
-		$test1 = Utils::getAngle($pointA, $pointD, $pointB);
-		$test2 = Utils::getAngle($pointB, $pointA, $pointC);
-		$test3 = Utils::getAngle($pointC, $pointB, $pointD);
-		$test4 = Utils::getAngle($pointD, $pointC, $pointA);
+		$test1 = Point2d::getAngle($pointA, $pointD, $pointB);
+		$test2 = Point2d::getAngle($pointB, $pointA, $pointC);
+		$test3 = Point2d::getAngle($pointC, $pointB, $pointD);
+		$test4 = Point2d::getAngle($pointD, $pointC, $pointA);
 
 		if ($test1 != deg2rad(90) || $test2 != deg2rad(90) || $test3 != deg2rad(90) || $test4 != deg2rad(90)) {
 			throw new Exception('Points must be draw a rectangle!');
