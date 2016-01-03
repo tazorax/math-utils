@@ -54,7 +54,7 @@ class Rectangle extends Polygon {
 		$test2 = Utils::getAngle($pointB, $pointA, $pointC);
 		$test3 = Utils::getAngle($pointC, $pointB, $pointD);
 		$test4 = Utils::getAngle($pointD, $pointC, $pointA);
-
+var_dump($test1, $test2, $test3, $test4);
 		if ($test1 != deg2rad(90) || $test2 != deg2rad(90) || $test3 != deg2rad(90) || $test4 != deg2rad(90)) {
 			throw new Exception('Points must be draw a rectangle!');
 		}
