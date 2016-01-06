@@ -3,6 +3,7 @@
   "description": "Mathematical objects in a PHP library",
   "homepage": "http://tazorax.github.io/math-utils/",
   "license": "MIT",
+  "type": "library",
   "authors": [
     {
       "name": "tazorax",
