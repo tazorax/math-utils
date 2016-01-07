@@ -74,4 +74,27 @@ class FractionTest extends \PHPUnit_Framework_TestCase {
 		$f1 = new Fraction(1, 0);
 		$f1->floatValue();
 	}
+
+	/**
+	 *
+	 */
+	public function testFromFloat() {
+		$f1 = new Fraction(1, 2);
+
+		$this->assertEquals($f1, Fraction::getFromFloat(0.5));
+
+		$f2 = new Fraction(1, 3);
+
+		$this->assertEquals($f2, Fraction::getFromFloat(0.3333333));
+
+		$this->assertEquals($f2, Fraction::getFromFloat(0.33, 1.e-1));
+		$this->assertEquals($f2, Fraction::getFromFloat(0.333, 1.e-2));
+		$this->assertEquals($f2, Fraction::getFromFloat(0.3333, 1.e-3));
+		$this->assertEquals($f2, Fraction::getFromFloat(0.33336, 1.e-4));
+		$this->assertNotEquals($f2, Fraction::getFromFloat(0.33337, 1.e-4));
+
+		$f3 = new Fraction(5, 3);
+
+		$this->assertEquals($f3, Fraction::getFromFloat(1.6666667));
+	}
 }
