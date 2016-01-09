@@ -60,23 +60,6 @@ class Point3d {
 	}
 
 	/**
-	 * @param Point3d $point
-	 * @return bool
-	 */
-	public function equals(Point3d $point) {
-		return self::compareEquals($this, $point);
-	}
-
-	/**
-	 * @param Point3d $point1
-	 * @param Point3d $point2
-	 * @return bool
-	 */
-	public static function compareEquals(Point3d $point1, Point3d $point2) {
-		return $point1->x == $point2->x && $point1->y == $point2->y && $point1->z == $point2->z;
-	}
-
-	/**
 	 * @param float $x
 	 * @param float $y
 	 * @param float $z
