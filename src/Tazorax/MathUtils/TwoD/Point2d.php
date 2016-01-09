@@ -57,23 +57,6 @@ class Point2d {
 	}
 
 	/**
-	 * @param Point2d $point
-	 * @return bool
-	 */
-	public function isEquals(Point2d $point) {
-		return self::compareEquals($this, $point);
-	}
-
-	/**
-	 * @param Point2d $point1
-	 * @param Point2d $point2
-	 * @return bool
-	 */
-	public static function compareEquals(Point2d $point1, Point2d $point2) {
-		return $point1->x == $point2->x && $point1->y == $point2->y;
-	}
-
-	/**
 	 * @param float $x
 	 * @param float $y
 	 * @return void
@@ -120,7 +103,7 @@ class Point2d {
 	 * @throws Exception
 	 */
 	public static function getAngle(Point2d $center, Point2d $point1, Point2d $point2) {
-		if ($point1->isEquals($center) || $point1->isEquals($center)) {
+		if ($point1 == $center || $point2 == $center) {
 			throw new Exception('Points must be different than the center point!');
 		}
 

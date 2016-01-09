@@ -12,7 +12,7 @@
 namespace Tazorax\MathUtils;
 
 /**
- * Exception for MathUtils classes
+ * Generic exception for MathUtils classes
  *
  * @package Tazorax\MathUtils
  */

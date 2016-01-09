@@ -43,7 +43,7 @@ class PolygonTest extends \PHPUnit_Framework_TestCase {
 		$pt3 = new Point2d();
 		$p1->setPoint(1, $pt3);
 
-		$this->assertTrue($p1->getPoint(1)->isEquals($pt3));
+		$this->assertEquals($p1->getPoint(1), $pt3);
 	}
 
 	/**
@@ -82,11 +82,11 @@ class PolygonTest extends \PHPUnit_Framework_TestCase {
 		$p2->addPoint(new Point2d(2, 4));
 		$p2->addPoint(new Point2d(2, 5));
 
-		$this->assertTrue($p2->isEquals($p1->translate(new Vector2d(2, 1))));
-		$this->assertFalse($p2->isEquals($p1->translate(new Vector2d(2, 2))));
+		$this->assertEquals($p2, $p1->translate(new Vector2d(2, 1)));
+		$this->assertNotEquals($p2, $p1->translate(new Vector2d(2, 2)));
 
 		$p2->addPoint(new Point2d(1, 0));
 
-		$this->assertFalse($p2->isEquals($p1->translate(new Vector2d(2, 1))));
+		$this->assertNotEquals($p2, $p1->translate(new Vector2d(2, 1)));
 	}
 }

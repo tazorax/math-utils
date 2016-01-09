@@ -29,10 +29,10 @@ class RectangleTest extends \PHPUnit_Framework_TestCase {
 
 		$r = new Rectangle($pointA, $pointB, $pointC, $pointD);
 
-		$this->assertTrue($pointA->isEquals($r->getPointA()));
-		$this->assertTrue($pointB->isEquals($r->getPointB()));
-		$this->assertTrue($pointC->isEquals($r->getPointC()));
-		$this->assertTrue($pointD->isEquals($r->getPointD()));
+		$this->assertEquals($pointA, $r->getPointA());
+		$this->assertEquals($pointB, $r->getPointB());
+		$this->assertEquals($pointC, $r->getPointC());
+		$this->assertEquals($pointD, $r->getPointD());
 
 		$this->assertEquals(14, $r->getPerimeter());
 	}

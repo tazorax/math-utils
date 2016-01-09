@@ -41,11 +41,11 @@ class Point3dTest extends \PHPUnit_Framework_TestCase {
 		$p1 = new Point3d(1, 2, 3);
 		$p2 = new Point3d(1, 2, 3);
 
-		$this->assertTrue($p1->equals($p2));
+		$this->assertEquals($p1, $p2);
 
 		$p3 = new Point3d(2, 2, 3);
 
-		$this->assertFalse($p1->equals($p3));
+		$this->assertNotEquals($p1, $p3);
 	}
 
 	/**
@@ -61,15 +61,14 @@ class Point3dTest extends \PHPUnit_Framework_TestCase {
 		$v1 = new Vector3d(1, 2, 2);
 		$v2 = new Vector3d(1, 2, 3);
 
-		$this->assertTrue(Point3d::compareEquals($p3, $p4));
-		$this->assertTrue($p3->equals($p4));
-		$this->assertTrue($p3->equals(Point3d::subtract($p1, $v1)));
-		$this->assertTrue($p1->equals(Point3d::add($p2, $v2)));
+		$this->assertEquals($p3, $p4);
+		$this->assertEquals($p3, Point3d::subtract($p1, $v1));
+		$this->assertEquals($p1, Point3d::add($p2, $v2));
 
-		$this->assertTrue(Vector3d::compareEquals($v2, Point3d::subtractP($p1, $p2)));
+		$this->assertEquals($v2, Point3d::subtractP($p1, $p2));
 
 		$p1->offset(-1, 3, -5);
 
-		$this->assertTrue($p1->equals($p5));
+		$this->assertEquals($p1, $p5);
 	}
 }

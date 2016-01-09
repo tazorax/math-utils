@@ -39,23 +39,6 @@ class Vector2d {
 	}
 
 	/**
-	 * @param Vector2d $vector
-	 * @return bool
-	 */
-	public function isEquals(Vector2d $vector) {
-		return self::compareEquals($this, $vector);
-	}
-
-	/**
-	 * @param Vector2d $vector1
-	 * @param Vector2d $vector2
-	 * @return bool
-	 */
-	public static function compareEquals(Vector2d $vector1, Vector2d $vector2) {
-		return $vector1->x == $vector2->x && $vector1->y == $vector2->y;
-	}
-
-	/**
 	 * Computes the dot product of the this vector and vector $vector.
 	 *
 	 * @param Vector2d $vector the other vector

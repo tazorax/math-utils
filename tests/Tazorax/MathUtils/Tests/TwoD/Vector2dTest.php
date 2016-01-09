@@ -85,11 +85,11 @@ class Vector2dTest extends \PHPUnit_Framework_TestCase {
 	public function testAddition() {
 		$v1 = new Vector2d(1, 2);
 
-		$this->assertTrue($v1->add(new Vector2d(3, 9))->isEquals(new Vector2d(4, 11)));
+		$this->assertEquals($v1->add(new Vector2d(3, 9)), new Vector2d(4, 11));
 
 		$v2 = new Vector2d(0, 9);
 
-		$this->assertTrue($v2->add(new Vector2d(3, 9))->isEquals(new Vector2d(3, 18)));
+		$this->assertEquals($v2->add(new Vector2d(3, 9)), new Vector2d(3, 18));
 	}
 
 	/**
@@ -98,11 +98,11 @@ class Vector2dTest extends \PHPUnit_Framework_TestCase {
 	public function testSubtraction() {
 		$v1 = new Vector2d(1, 2);
 
-		$this->assertTrue($v1->sub(new Vector2d(3, 9))->isEquals(new Vector2d(-2, -7)));
+		$this->assertEquals($v1->sub(new Vector2d(3, 9)), new Vector2d(-2, -7));
 
 		$v2 = new Vector2d(0, 9);
 
-		$this->assertTrue($v2->sub(new Vector2d(3, 9))->isEquals(new Vector2d(-3, 0)));
+		$this->assertEquals($v2->sub(new Vector2d(3, 9)), new Vector2d(-3, 0));
 	}
 
 }

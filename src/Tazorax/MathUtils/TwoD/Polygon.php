@@ -129,25 +129,4 @@ class Polygon {
 
 		return $buffer;
 	}
-
-	/**
-	 * Compare equality with other Polygon
-	 *
-	 * @param Polygon $polygon
-	 * @return bool
-	 * @throws Exception
-	 */
-	public function isEquals(Polygon $polygon) {
-		$buffer = true;
-
-		foreach ($this->_points as $index => $point) {
-			try {
-				$buffer = $buffer && $point->isEquals($polygon->getPoint($index));
-			} catch (Exception $e) {
-				$buffer = false;
-			}
-		}
-
-		return $buffer;
-	}
 }
