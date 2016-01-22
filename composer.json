@@ -11,8 +11,8 @@
     }
   ],
   "autoload": {
-    "psr-0": {
-      "Tazorax\\": "src/"
+    "psr-4": {
+      "Tazorax\\MathUtils\\": "src/Tazorax/MathUtils/"
     }
   },
   "require": {
