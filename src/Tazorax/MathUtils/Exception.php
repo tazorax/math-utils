@@ -16,6 +16,6 @@ namespace Tazorax\MathUtils;
  *
  * @package Tazorax\MathUtils
  */
-class Exception extends \Exception {
-
+class Exception extends \Exception
+{
 }
