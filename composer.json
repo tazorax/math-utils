@@ -22,5 +22,10 @@
     "phpunit/phpunit": "~4.8 || ~5.1",
     "satooshi/php-coveralls": "~1.0",
     "phpdocumentor/phpdocumentor": "~2.8"
+  },
+  "config": {
+    "platform": {
+      "php": "5.4.0"
+    }
   }
 }
