@@ -36,7 +36,7 @@ class Point3d
      * @param float $y
      * @param float $z
      */
-    public function __construct($x = 0, $y = 0, $z = 0)
+    public function __construct($x = .0, $y = .0, $z = .0)
     {
         $this->x = $x;
         $this->y = $y;
@@ -67,7 +67,7 @@ class Point3d
      * @param float $x
      * @param float $y
      * @param float $z
-     * @return void
+     * @return Point3d
      */
     public function offset($x, $y, $z)
     {
@@ -75,6 +75,8 @@ class Point3d
         $this->x = $tmp->x;
         $this->y = $tmp->y;
         $this->z = $tmp->z;
+
+        return $this;
     }
 
     /**

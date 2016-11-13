@@ -42,10 +42,13 @@ class Polygon
      * Add point
      *
      * @param Point2d $point
+     * @return Polygon
      */
     public function addPoint(Point2d $point)
     {
         $this->_points[] = $point;
+
+        return $this;
     }
 
     /**
@@ -69,10 +72,13 @@ class Polygon
      *
      * @param int $index
      * @param Point2d $point
+     * @return Polygon
      */
     public function setPoint($index, Point2d $point)
     {
         $this->_points[$index] = $point;
+
+        return $this;
     }
 
     /**

@@ -35,7 +35,7 @@ class Vector2d
      * @param float $x
      * @param float $y
      */
-    public function __construct($x = 0, $y = 0)
+    public function __construct($x = .0, $y = .0)
     {
         $this->x = $x;
         $this->y = $y;
@@ -75,6 +75,9 @@ class Vector2d
 
     /**
      * Normalizes this vector in place.
+     *
+     * @return Vector2d
+     * @throws Exception
      */
     public function normalize()
     {
@@ -85,6 +88,8 @@ class Vector2d
         } else {
             throw new Exception('len = 0');
         }
+
+        return $this;
     }
 
     /**

@@ -81,10 +81,13 @@ class Triangle extends Polygon
      * Set A point
      *
      * @param Point2d $point
+     * @return Triangle
      */
     public function setPointA($point)
     {
         $this->setPoint(self::A_POINT, $point);
+
+        return $this;
     }
 
     /**
@@ -101,10 +104,13 @@ class Triangle extends Polygon
      * Set B point
      *
      * @param Point2d $point
+     * @return Triangle
      */
     public function setPointB($point)
     {
         $this->setPoint(self::B_POINT, $point);
+
+        return $this;
     }
 
     /**
@@ -121,10 +127,13 @@ class Triangle extends Polygon
      * Set C point
      *
      * @param Point2d $point
+     * @return Triangle
      */
     public function setPointC($point)
     {
         $this->setPoint(self::C_POINT, $point);
+
+        return $this;
     }
 
     /**
@@ -132,6 +141,7 @@ class Triangle extends Polygon
      *
      * @param int $index
      * @param Point2d $point
+     * @return Triangle
      * @throws Exception
      */
     public function setPoint($index, Point2d $point)
@@ -141,6 +151,8 @@ class Triangle extends Polygon
         }
 
         parent::setPoint($index, $point);
+
+        return $this;
     }
 
     /**
