@@ -13,7 +13,7 @@
 >
     <testsuites>
         <testsuite name="MathUtils-Lib Test Suite">
-            <directory>./tests/Tazorax/</directory>
+            <directory>./tests/</directory>
         </testsuite>
     </testsuites>
     <filter>
