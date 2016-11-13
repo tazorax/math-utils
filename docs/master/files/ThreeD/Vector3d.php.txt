@@ -38,7 +38,7 @@ class Vector3d
      * @param float $y
      * @param float $z
      */
-    public function __construct($x = 0, $y = 0, $z = 0)
+    public function __construct($x = .0, $y = .0, $z = .0)
     {
         $this->x = $x;
         $this->y = $y;
@@ -89,6 +89,7 @@ class Vector3d
     /**
      * Normalizes this vector in place.
      *
+     * @return Vector3d
      * @throws Exception
      */
     public function normalize()
@@ -101,6 +102,8 @@ class Vector3d
         } else {
             throw new Exception('len = 0');
         }
+
+        return $this;
     }
 
     /**

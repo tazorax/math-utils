@@ -35,7 +35,7 @@ class Point2d
      * @param float $x
      * @param float $y
      */
-    public function __construct($x = 0, $y = 0)
+    public function __construct($x = .0, $y = .0)
     {
         $this->x = $x;
         $this->y = $y;
@@ -64,13 +64,15 @@ class Point2d
     /**
      * @param float $x
      * @param float $y
-     * @return void
+     * @return Point2d
      */
     public function offset($x, $y)
     {
         $tmp = self::add($this, new Vector2d($x, $y));
         $this->x = $tmp->x;
         $this->y = $tmp->y;
+
+        return $this;
     }
 
     /**

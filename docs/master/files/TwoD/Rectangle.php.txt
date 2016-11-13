@@ -47,6 +47,7 @@ class Rectangle extends Polygon
      * @param Point2d $pointB B point
      * @param Point2d $pointC C point
      * @param Point2d $pointD D point
+     * @throws Exception
      */
     public function __construct(Point2d $pointA, Point2d $pointB, Point2d $pointC, Point2d $pointD)
     {
@@ -81,10 +82,13 @@ class Rectangle extends Polygon
      * Set A point
      *
      * @param Point2d $point
+     * @return Rectangle
      */
     public function setPointA($point)
     {
         $this->setPoint(self::A_POINT, $point);
+
+        return $this;
     }
 
     /**
@@ -101,10 +105,13 @@ class Rectangle extends Polygon
      * Set B point
      *
      * @param Point2d $point
+     * @return Rectangle
      */
     public function setPointB($point)
     {
         $this->setPoint(self::B_POINT, $point);
+
+        return $this;
     }
 
     /**
@@ -121,10 +128,13 @@ class Rectangle extends Polygon
      * Set C point
      *
      * @param Point2d $point
+     * @return Rectangle
      */
     public function setPointC($point)
     {
         $this->setPoint(self::C_POINT, $point);
+
+        return $this;
     }
 
     /**
@@ -141,10 +151,13 @@ class Rectangle extends Polygon
      * Set D point
      *
      * @param Point2d $point
+     * @return Rectangle
      */
     public function setPointD($point)
     {
         $this->setPoint(self::D_POINT, $point);
+
+        return $this;
     }
 
     /**
@@ -152,6 +165,7 @@ class Rectangle extends Polygon
      *
      * @param int $index
      * @param Point2d $point
+     * @return Rectangle
      * @throws Exception
      */
     public function setPoint($index, Point2d $point)
@@ -161,6 +175,8 @@ class Rectangle extends Polygon
         }
 
         parent::setPoint($index, $point);
+
+        return $this;
     }
 
     /**

@@ -37,10 +37,13 @@ class FractionCollection
      * Add a Fraction object to this collection
      *
      * @param Fraction $fraction
+     * @return FractionCollection
      */
     public function addFraction(Fraction $fraction)
     {
         $this->fractions[] = $fraction;
+
+        return $this;
     }
 
     /**
