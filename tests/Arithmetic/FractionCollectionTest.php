@@ -61,4 +61,25 @@ class FractionCollectionTest extends \PHPUnit_Framework_TestCase {
 		$this->assertEquals([$f1, $f2, $f3, $f4, $f5], $fc2->fractions);
 
 	}
+
+    /**
+     *
+     */
+    public function testSum() {
+        $fc1 = new FractionCollection();
+
+        $fc1->addFraction(new Fraction(1, 2));
+        $fc1->addFraction(new Fraction(1, 4));
+        $fc1->addFraction(new Fraction(1, 8));
+        $fc1->addFraction(new Fraction(1, 8));
+        $fc1->addFraction(new Fraction(4, 256));
+
+        $this->assertEquals(5, count($fc1->fractions));
+
+        $expected_sum = new Fraction(65, 64);
+        $f = $fc1->sum();
+
+        $this->assertEquals($expected_sum, $f);
+
+    }
 }

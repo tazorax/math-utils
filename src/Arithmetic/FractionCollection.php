@@ -77,4 +77,22 @@ class FractionCollection
 
         return $buffer;
     }
+
+    /**
+     * Get sum
+     *
+     * @return Fraction
+     */
+    public function sum()
+    {
+        $result = new Fraction();
+        $simplified_collection = $this->simplify();
+
+        foreach ($simplified_collection->fractions as $fraction) {
+            $result->numerator += $fraction->numerator;
+            $result->denominator = $fraction->denominator;
+        }
+
+        return $result;
+    }
 }
