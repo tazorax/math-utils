@@ -19,64 +19,68 @@ use Tazorax\MathUtils\TwoD\Rectangle;
  * Class RectangleTest
  * @package Tazorax\MathUtils\Tests\TwoD
  */
-class RectangleTest extends \PHPUnit_Framework_TestCase {
+class RectangleTest extends \PHPUnit_Framework_TestCase
+{
+    public function testNew()
+    {
+        $pointA = new Point2d(0, 0);
+        $pointB = new Point2d(0, 4);
+        $pointC = new Point2d(3, 4);
+        $pointD = new Point2d(3, 0);
 
-	public function testNew() {
-		$pointA = new Point2d(0, 0);
-		$pointB = new Point2d(0, 4);
-		$pointC = new Point2d(3, 4);
-		$pointD = new Point2d(3, 0);
+        $r = new Rectangle($pointA, $pointB, $pointC, $pointD);
 
-		$r = new Rectangle($pointA, $pointB, $pointC, $pointD);
+        $this->assertEquals($pointA, $r->getPointA());
+        $this->assertEquals($pointB, $r->getPointB());
+        $this->assertEquals($pointC, $r->getPointC());
+        $this->assertEquals($pointD, $r->getPointD());
 
-		$this->assertEquals($pointA, $r->getPointA());
-		$this->assertEquals($pointB, $r->getPointB());
-		$this->assertEquals($pointC, $r->getPointC());
-		$this->assertEquals($pointD, $r->getPointD());
+        $this->assertEquals(14, $r->getPerimeter());
+    }
 
-		$this->assertEquals(14, $r->getPerimeter());
-	}
+    /**
+     * @expectedException        Exception
+     * @expectedExceptionMessage Points must be draw a rectangle!
+     */
+    public function testNewException()
+    {
+        $pointA = new Point2d(0, 0);
+        $pointB = new Point2d(0, 4);
+        $pointC = new Point2d(3, 4);
+        $pointD = new Point2d(3, 1);
 
-	/**
-	 * @expectedException        Exception
-	 * @expectedExceptionMessage Points must be draw a rectangle!
-	 */
-	public function testNewException() {
-		$pointA = new Point2d(0, 0);
-		$pointB = new Point2d(0, 4);
-		$pointC = new Point2d(3, 4);
-		$pointD = new Point2d(3, 1);
+        new Rectangle($pointA, $pointB, $pointC, $pointD);
+    }
 
-		new Rectangle($pointA, $pointB, $pointC, $pointD);
-	}
+    /**
+     * @expectedException        Exception
+     * @expectedExceptionMessage I am a rectangle!
+     */
+    public function testAddPointException()
+    {
+        $pointA = new Point2d(0, 0);
+        $pointB = new Point2d(0, 4);
+        $pointC = new Point2d(3, 4);
+        $pointD = new Point2d(3, 0);
+        $pointE = new Point2d(5, 5);
 
-	/**
-	 * @expectedException        Exception
-	 * @expectedExceptionMessage I am a rectangle!
-	 */
-	public function testAddPointException() {
-		$pointA = new Point2d(0, 0);
-		$pointB = new Point2d(0, 4);
-		$pointC = new Point2d(3, 4);
-		$pointD = new Point2d(3, 0);
-		$pointE = new Point2d(5, 5);
+        $r = new Rectangle($pointA, $pointB, $pointC, $pointD);
+        $r->addPoint($pointE);
+    }
 
-		$r = new Rectangle($pointA, $pointB, $pointC, $pointD);
-		$r->addPoint($pointE);
-	}
+    /**
+     * @expectedException        Exception
+     * @expectedExceptionMessage I am a rectangle!
+     */
+    public function testSetPointException()
+    {
+        $pointA = new Point2d(0, 0);
+        $pointB = new Point2d(0, 4);
+        $pointC = new Point2d(3, 4);
+        $pointD = new Point2d(3, 0);
+        $pointE = new Point2d(5, 5);
 
-	/**
-	 * @expectedException        Exception
-	 * @expectedExceptionMessage I am a rectangle!
-	 */
-	public function testSetPointException() {
-		$pointA = new Point2d(0, 0);
-		$pointB = new Point2d(0, 4);
-		$pointC = new Point2d(3, 4);
-		$pointD = new Point2d(3, 0);
-		$pointE = new Point2d(5, 5);
-
-		$r = new Rectangle($pointA, $pointB, $pointC, $pointD);
-		$r->setPoint(4, $pointE);
-	}
+        $r = new Rectangle($pointA, $pointB, $pointC, $pointD);
+        $r->setPoint(4, $pointE);
+    }
 }
