@@ -11,6 +11,7 @@
 
 namespace Tazorax\MathUtils\Tests\ThreeD;
 
+use PHPUnit\Framework\TestCase;
 use Tazorax\MathUtils\ThreeD\Point3d;
 use Tazorax\MathUtils\ThreeD\Vector3d;
 
@@ -18,7 +19,7 @@ use Tazorax\MathUtils\ThreeD\Vector3d;
  * Class Point3dTest
  * @package Tazorax\MathUtils\ThreeD
  */
-class Point3dTest extends \PHPUnit_Framework_TestCase
+class Point3dTest extends TestCase
 {
     /**
      *

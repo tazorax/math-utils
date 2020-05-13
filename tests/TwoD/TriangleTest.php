@@ -11,6 +11,7 @@
 
 namespace Tazorax\MathUtils\Tests\TwoD;
 
+use PHPUnit\Framework\TestCase;
 use Tazorax\MathUtils\Exception;
 use Tazorax\MathUtils\TwoD\Point2d;
 use Tazorax\MathUtils\TwoD\Triangle;
@@ -19,7 +20,7 @@ use Tazorax\MathUtils\TwoD\Triangle;
  * Class TriangleTest
  * @package Tazorax\MathUtils\TwoD
  */
-class TriangleTest extends \PHPUnit_Framework_TestCase
+class TriangleTest extends TestCase
 {
 
     /**

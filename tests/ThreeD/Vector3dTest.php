@@ -11,6 +11,7 @@
 
 namespace Tazorax\MathUtils\Tests\ThreeD;
 
+use PHPUnit\Framework\TestCase;
 use Tazorax\MathUtils\Exception;
 use Tazorax\MathUtils\ThreeD\Vector3d;
 
@@ -18,7 +19,7 @@ use Tazorax\MathUtils\ThreeD\Vector3d;
  * Class Vector3dTest
  * @package Tazorax\MathUtils\ThreeD
  */
-class Vector3dTest extends \PHPUnit_Framework_TestCase
+class Vector3dTest extends TestCase
 {
     /**
      *

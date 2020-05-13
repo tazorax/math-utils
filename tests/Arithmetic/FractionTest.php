@@ -11,6 +11,7 @@
 
 namespace Tazorax\MathUtils\Tests\Arithmetic;
 
+use PHPUnit\Framework\TestCase;
 use Tazorax\MathUtils\Arithmetic\Fraction;
 use Tazorax\MathUtils\Exception;
 
@@ -18,7 +19,7 @@ use Tazorax\MathUtils\Exception;
  * Class FractionTest
  * @package Tazorax\MathUtils\Arithmetic
  */
-class FractionTest extends \PHPUnit_Framework_TestCase
+class FractionTest extends TestCase
 {
     /**
      *

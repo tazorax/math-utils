@@ -11,13 +11,14 @@
 
 namespace Tazorax\MathUtils\Tests\Arithmetic;
 
+use PHPUnit\Framework\TestCase;
 use Tazorax\MathUtils\Arithmetic\Utils;
 
 /**
  * Class UtilsTest
  * @package Tazorax\MathUtils\Arithmetic
  */
-class UtilsTest extends \PHPUnit_Framework_TestCase
+class UtilsTest extends TestCase
 {
     /**
      *

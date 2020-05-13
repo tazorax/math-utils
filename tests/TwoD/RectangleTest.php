@@ -11,6 +11,7 @@
 
 namespace Tazorax\MathUtils\Tests\TwoD;
 
+use PHPUnit\Framework\TestCase;
 use Tazorax\MathUtils\Exception;
 use Tazorax\MathUtils\TwoD\Point2d;
 use Tazorax\MathUtils\TwoD\Rectangle;
@@ -19,7 +20,7 @@ use Tazorax\MathUtils\TwoD\Rectangle;
  * Class RectangleTest
  * @package Tazorax\MathUtils\Tests\TwoD
  */
-class RectangleTest extends \PHPUnit_Framework_TestCase
+class RectangleTest extends TestCase
 {
     public function testNew()
     {

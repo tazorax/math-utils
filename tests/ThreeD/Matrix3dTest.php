@@ -11,13 +11,14 @@
 
 namespace Tazorax\MathUtils\Tests\ThreeD;
 
+use PHPUnit\Framework\TestCase;
 use Tazorax\MathUtils\ThreeD\Matrix3d;
 
 /**
  * Class Matrix3dTest
  * @package Tazorax\MathUtils\ThreeD
  */
-class Matrix3dTest extends \PHPUnit_Framework_TestCase
+class Matrix3dTest extends TestCase
 {
 
     /**

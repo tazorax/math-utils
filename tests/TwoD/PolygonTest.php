@@ -11,6 +11,7 @@
 
 namespace Tazorax\MathUtils\Tests\TwoD;
 
+use PHPUnit\Framework\TestCase;
 use Tazorax\MathUtils\Exception;
 use Tazorax\MathUtils\TwoD\Point2d;
 use Tazorax\MathUtils\TwoD\Polygon;
@@ -20,7 +21,7 @@ use Tazorax\MathUtils\TwoD\Vector2d;
  * Class PolygonTest
  * @package Tazorax\MathUtils\Tests\TwoD
  */
-class PolygonTest extends \PHPUnit_Framework_TestCase
+class PolygonTest extends TestCase
 {
 
     /**

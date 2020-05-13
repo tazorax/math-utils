@@ -11,6 +11,7 @@
 
 namespace Tazorax\MathUtils\Tests\TwoD;
 
+use PHPUnit\Framework\TestCase;
 use Tazorax\MathUtils\Exception;
 use Tazorax\MathUtils\TwoD\Vector2d;
 
@@ -18,7 +19,7 @@ use Tazorax\MathUtils\TwoD\Vector2d;
  * Class Vector2dTest
  * @package Tazorax\MathUtils\TwoD
  */
-class Vector2dTest extends \PHPUnit_Framework_TestCase
+class Vector2dTest extends TestCase
 {
 
     /**
