@@ -98,9 +98,16 @@ class FractionCollectionTest extends TestCase
 
         $this->assertEquals(2, count($fc1->fractions));
 
-        $expectedMultiplication = new Fraction(1, 50);
+        $expectedMultiplication1 = new Fraction(1, 50);
         $f = $fc1->multiplication();
 
-        $this->assertEquals($expectedMultiplication, $f);
+        $this->assertEquals($expectedMultiplication1, $f);
+
+        $expectedMultiplication2 = new Fraction(40, 2000);
+        $f = $fc1->multiplication(false);
+
+        $this->assertEquals($expectedMultiplication2, $f);
+
+
     }
 }

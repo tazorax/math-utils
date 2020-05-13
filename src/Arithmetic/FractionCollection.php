@@ -99,9 +99,10 @@ class FractionCollection
     /**
      * Get multiplication
      *
+     * @param bool $simplified
      * @return Fraction
      */
-    public function multiplication()
+    public function multiplication($simplified = true)
     {
         $result = new Fraction(1, 1);
 
@@ -111,9 +112,13 @@ class FractionCollection
             $result->denominator *= $fraction->denominator;
         }
 
-        $simplifiedCollection = new self();
-        $simplifiedCollection->addFraction($result);
+        if ($simplified) {
+            $simplifiedCollection = new self();
+            $simplifiedCollection->addFraction($result);
 
-        return $simplifiedCollection->simplify()->fractions[0];
+            return $simplifiedCollection->simplify()->fractions[0];
+        }
+
+        return $result;
     }
 }
