@@ -53,15 +53,15 @@ class FractionCollection
      */
     public function simplify()
     {
-        $simple_fractions = [];
+        $simpleFractions = [];
 
         $denominators = [];
 
         // Simplify each fraction before
         foreach ($this->fractions as $fraction) {
-            $new_fraction = $fraction->simplify();
-            $simple_fractions[] = $new_fraction;
-            $denominators[] = $new_fraction->denominator;
+            $newFraction = $fraction->simplify();
+            $simpleFractions[] = $newFraction;
+            $denominators[] = $newFraction->denominator;
         }
 
         // Find lcm denominator
@@ -69,10 +69,10 @@ class FractionCollection
 
         $buffer = new self();
 
-        foreach ($simple_fractions as $fraction) {
+        foreach ($simpleFractions as $fraction) {
             // Set the fraction with found $denominator
-            $new_fraction = new Fraction($fraction->numerator * $denominator / $fraction->denominator, $denominator);
-            $buffer->addFraction($new_fraction);
+            $newFraction = new Fraction($fraction->numerator * $denominator / $fraction->denominator, $denominator);
+            $buffer->addFraction($newFraction);
         }
 
         return $buffer;
@@ -86,13 +86,34 @@ class FractionCollection
     public function sum()
     {
         $result = new Fraction();
-        $simplified_collection = $this->simplify();
+        $simplifiedCollection = $this->simplify();
 
-        foreach ($simplified_collection->fractions as $fraction) {
+        foreach ($simplifiedCollection->fractions as $fraction) {
             $result->numerator += $fraction->numerator;
             $result->denominator = $fraction->denominator;
         }
 
         return $result;
+    }
+
+    /**
+     * Get multiplication
+     *
+     * @return Fraction
+     */
+    public function multiplication()
+    {
+        $result = new Fraction(1, 1);
+
+
+        foreach ($this->fractions as $fraction) {
+            $result->numerator *= $fraction->numerator;
+            $result->denominator *= $fraction->denominator;
+        }
+
+        $simplifiedCollection = new self();
+        $simplifiedCollection->addFraction($result);
+
+        return $simplifiedCollection->simplify()->fractions[0];
     }
 }
