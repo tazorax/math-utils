@@ -1,6 +1,6 @@
 #!bin/bash
 
-if [ "$TRAVIS_REPO_SLUG" == "tazorax/math-utils" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ] && [ "$TRAVIS_PHP_VERSION" == "5.5" ] && [ -a vendor/bin/phpdoc ]; then
+if [ "$TRAVIS_REPO_SLUG" == "tazorax/math-utils" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ] && [ "$TRAVIS_PHP_VERSION" == "7.3" ] && [ -a vendor/bin/phpdoc ]; then
   ## Generation
   php vendor/bin/phpdoc -d ./src -t ./build/docs
 
