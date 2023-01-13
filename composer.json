@@ -23,11 +23,6 @@
   "require": {
     "php": ">=7.0"
   },
-  "config": {
-    "platform": {
-      "php": "7.0.0"
-    }
-  },
   "require-dev": {
     "phpunit/phpunit": "^6.5",
     "satooshi/php-coveralls": "^2.2",
